@@ -3,21 +3,24 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
-:root,
-html[data-theme="light"] {
-  --background: #fdfdfd;
-  --foreground: #282728;
-  --accent: #006cac;
-  --muted: #e6e6e6;
-  --border: #ece9e9;
+:root {
+  /* Base Colors (Light Mode - Clean White/Gray) */
+  --color-fill: 251, 254, 251; /* #fbfeff */
+  --color-text-base: 40, 40, 40; /* Nearly Black */
+  --color-accent: 37, 99, 235; /* Royal Blue (Trustworthy Tech Color) */
+  --color-card: 255, 255, 255;
+  --color-card-muted: 245, 245, 245;
+  --color-border: 230, 230, 230;
 }
 
-html[data-theme="dark"] {
-  --background: #212737;
-  --foreground: #eaedf3;
-  --accent: #ff6b01;
-  --muted: #343f60;
-  --border: #ab4b08;
+[data-theme="dark"] {
+  /* Dark Mode (Cyber/AI Vibe) */
+  --color-fill: 15, 23, 42; /* Slate 900 (Deep Blue/Black) */
+  --color-text-base: 226, 232, 240; /* Slate 200 */
+  --color-accent: 56, 189, 248; /* Sky Blue (Glowing Effect) */
+  --color-card: 30, 41, 59; /* Slate 800 */
+  --color-card-muted: 15, 23, 42;
+  --color-border: 51, 65, 85;
 }
 
 @theme inline {
