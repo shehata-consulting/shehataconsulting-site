@@ -1,13 +1,13 @@
 export const SITE = {
   website: "https://shehata.consulting/", // replace this with your deployed domain
-  author: "Sat Naing",
+  author: "Michael Shehata",
   profile: "https://satnaing.dev/",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "AstroPaper",
+  desc: "Enterprise-Grade AI Implementation & Automation.",
+  title: "Shehata Tech Solutions",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
-  postPerPage: 4,
+  postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
   showArchives: true,
   showBackButton: true, // show back button in post detail

@@ -24,7 +24,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   <main id="main-content" data-layout="index" class="app-layout">
     <section id="hero" class:list={["pt-8 pb-6", "border-b border-border"]}>
       <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Mingalaba
+        Shehata Tech Solutions
       </h1>
       <a
         target="_blank"
@@ -41,11 +41,8 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         <span class="sr-only">RSS Feed</span>
       </a>
 
-      <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
+      <p class="my-4">
+        Enterprise-Grade AI Implementation & Automation. We move you beyond "chatbots" to intelligent workflows that drive revenue.
       </p>
       <p class="mt-2">
         Read the blog posts or check
@@ -66,7 +63,37 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         )
       }
     </section>
+<section id="services" class="pb-6 pt-12">
+        <h2 class="text-2xl font-bold tracking-wide sm:text-3xl">
+          Services
+        </h2>
+        <div class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          
+          <div class="rounded-lg border border-skin-line p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-skin-accent">RAG & Knowledge Retrieval</h3>
+            <p class="mt-2 text-sm text-skin-base">
+              Stop wasting hours searching for answers. We build secure pipelines (Pinecone, Gemini) that let your team "chat" with internal data instantly.
+            </p>
+          </div>
 
+          <div class="rounded-lg border border-skin-line p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-skin-accent">Intelligent Automation</h3>
+            <p class="mt-2 text-sm text-skin-base">
+              Autonomous agents that read, categorize, and act on data streams. We automate the boring stuff so you can focus on strategy.
+            </p>
+          </div>
+
+          <div class="rounded-lg border border-skin-line p-6 shadow-sm">
+            <h3 class="text-lg font-semibold text-skin-accent">AI Strategy Audits</h3>
+            <p class="mt-2 text-sm text-skin-base">
+              A 2-week deep dive into your infrastructure to identify high-ROI AI opportunities and flag security risks before you build.
+            </p>
+          </div>
+
+        </div>
+      </section>
+      
+      <hr class="border-skin-line" />
     {
       featuredPosts.length > 0 && (
         <section
