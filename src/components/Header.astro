@@ -20,6 +20,13 @@ const isActive = (path: string) => {
 
   return currentPath === path || currentPathArray[0] === pathArray[0];
 };
+
+const activeNav = (() => {
+  if (isActive("/")) return "home";
+  if (isActive("/#services")) return "services";
+  if (isActive("/about")) return "about";
+  return "";
+})();
 ---
 
 <a
