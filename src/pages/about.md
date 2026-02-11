@@ -3,35 +3,36 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+## Building Reliable AI Infrastructure
 
-![Astro Paper](public/astropaper-og.jpg)
+I am **Michael Shehata**, a software engineer and the founder of **Shehata Tech Solutions LLC**.
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+My goal is simple: I help businesses navigate the noise of modern AI to build tools that actually work. I believe that technology should serve your business goals, not the other way around.
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+### My Philosophy
 
-## Features
+I approach every project as a partnership. I don't just write code; I try to understand the operational bottlenecks slowing you down.
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
+* **Practical over Hype:** I prefer proven, stable solutions over experimental trends. If a simple automation script solves the problem better than a complex AI model, I will tell you.
+* **Security Focused:** I understand that your data is your competitive advantage. I build systems that prioritize privacy and keep your internal knowledge secure.
+* **Long-Term Thinking:** I build software designed to be maintained and scaled, not just to look good in a demo.
 
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
+### Current Focus
 
-and so much more.
+I am currently privileged to be working with a key client to architect a custom AI implementation. This work involves:
 
-## Show your support
+* **Retrieval-Augmented Generation (RAG):** Helping teams access their internal knowledge instantly.
+* **Process Automation:** Connecting disconnected systems to reduce manual data entry.
+* **Custom Development:** Tailoring Python and LLM solutions to specific industry needs.
 
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
+### Why Connect?
 
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
+If you are looking for a developer who values clear communication as much as clean code, I would love to hear from you. Whether you are ready to build or just have questions about feasibility, I am always happy to share what I know.
 
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
+---
 
-Kyay zuu! 🙏🏼
+### Connect
+
+* **Email:** [contact@shehatatech.com](mailto:contact@shehatatech.com)
+* **GitHub:** [View my repositories](https://github.com/shehata-consulting)
+* **LinkedIn:** [Let's connect](https://linkedin.com/in/YOUR_LINKEDIN_HERE)

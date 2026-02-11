@@ -54,6 +54,7 @@ import { SOCIALS } from "@/constants";
         )
       }
     </section>
+
 <section id="services" class="pb-6 pt-12">
         <h2 class="text-2xl font-bold tracking-wide sm:text-3xl">
           Services
@@ -85,23 +86,68 @@ import { SOCIALS } from "@/constants";
       </section>
       <hr class="border-skin-line" />
 
-<section id="contact" class="pb-6 pt-12 text-center">
-  <h2 class="text-2xl font-bold tracking-wide sm:text-3xl">
-    Ready to Automate?
-  </h2>
-  <p class="mt-4 text-lg text-skin-base">
-    Stop waiting for "someday." Let's build your AI infrastructure now.
-  </p>
+<section id="contact" class="pb-6 pt-12">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-2xl font-bold tracking-wide sm:text-3xl">
+          Start the Conversation
+        </h2>
+        <p class="mt-4 text-lg text-skin-base">
+          Have a project in mind? Let's discuss how we can build it.
+        </p>
+      </div>
 
-  <div class="mt-8">
-    <a 
-      href="mailto:shehatam.dev@gmail.com" 
-      class="rounded-lg bg-skin-accent px-6 py-3 text-lg font-bold text-skin-inverted hover:opacity-90"
-    >
-      Book a Discovery Call
-    </a>
-  </div>
-</section>
+      <form 
+        action="https://api.web3forms.com/submit" 
+        method="POST" 
+        class="mx-auto mt-10 max-w-xl rounded-lg border border-skin-line p-8 shadow-sm bg-skin-card"
+      >
+        <input type="hidden" name="access_key" value="12ef53cd-37d3-4a2f-8c60-96542dfc1635">
+
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <div class="grid grid-cols-1 gap-6">
+          <label class="block">
+            <span class="text-skin-base font-medium">Full Name</span>
+            <input 
+              type="text" 
+              name="name" 
+              class="mt-1 block w-full rounded-md border-skin-line bg-skin-fill px-4 py-2 text-skin-base focus:border-skin-accent focus:ring-skin-accent" 
+              placeholder="Michael Shehata" 
+              required
+            />
+          </label>
+
+          <label class="block">
+            <span class="text-skin-base font-medium">Email Address</span>
+            <input 
+              type="email" 
+              name="email" 
+              class="mt-1 block w-full rounded-md border-skin-line bg-skin-fill px-4 py-2 text-skin-base focus:border-skin-accent focus:ring-skin-accent" 
+              placeholder="shehatam.dev@gmail.com" 
+              required
+            />
+          </label>
+
+          <label class="block">
+            <span class="text-skin-base font-medium">Message</span>
+            <textarea 
+              name="message" 
+              rows="4" 
+              class="mt-1 block w-full rounded-md border-skin-line bg-skin-fill px-4 py-2 text-skin-base focus:border-skin-accent focus:ring-skin-accent" 
+              placeholder="Tell me about your project..." 
+              required
+            ></textarea>
+          </label>
+
+          <button 
+            type="submit" 
+            class="mt-4 w-full rounded-lg bg-skin-accent px-6 py-3 font-bold text-skin-inverted transition hover:opacity-90"
+          >
+            Send Message
+          </button>
+        </div>
+      </form>
+    </section>
       <hr class="border-skin-line" />
   </main>
   <Footer />
