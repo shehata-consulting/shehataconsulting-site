@@ -1,23 +1,23 @@
 export const SITE = {
-  website: "https://shehata.consulting/", // replace this with your deployed domain
+  website: "https://shehata.consulting/",
   author: "Michael Shehata",
-  profile: "https://satnaing.dev/",
-  desc: "Enterprise-Grade AI Implementation & Automation.",
+  profile: "https://shehata.consulting/",
+  desc: "Enterprise-Grade AI Implementation & Automation. Hybrid RAG systems, LLM integrations, and process automation built around your business.",
   title: "Shehata Tech Solutions",
-  ogImage: "astropaper-og.jpg",
-  lightAndDarkMode: true,
+  ogImage: "shehata-og.jpg",
+  lightAndDarkMode: false,          // dark mode only — matches the site design
   postPerIndex: 4,
   postPerPage: 3,
-  scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
-  showArchives: true,
-  showBackButton: true, // show back button in post detail
+  scheduledPostMargin: 15 * 60 * 1000,
+  showArchives: false,              // no blog archives needed
+  showBackButton: false,
   editPost: {
-    enabled: true,
+    enabled: false,                 // removes the "Edit page" link pointing to satnaing's repo
     text: "Edit page",
-    url: "https://github.com/satnaing/astro-paper/edit/main/",
+    url: "",
   },
-  dynamicOgImage: true,
-  dir: "ltr", // "rtl" | "auto"
-  lang: "en", // html lang code. Set this empty and default will be "en"
-  timezone: "Asia/Bangkok", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  dynamicOgImage: false,            // static OG image is fine for a single-page site
+  dir: "ltr",
+  lang: "en",
+  timezone: "America/New_York", 
 } as const;

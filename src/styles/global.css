@@ -1,73 +1,292 @@
-@import "tailwindcss";
-@import "./typography.css";
+/* ─────────────────────────────────────────────────────
+   Shehata Tech Solutions — Global Styles
+   ───────────────────────────────────────────────────── */
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+/* ─── Google Fonts are loaded in Layout.astro <head> ── */
 
+/* ─── Variables ──────────────────────────────────────── */
 :root {
-  /* Base Colors (Light Mode - Clean White/Gray) */
-  --color-fill: 251, 254, 251; /* #fbfeff */
-  --color-text-base: 40, 40, 40; /* Nearly Black */
-  --color-accent: 37, 99, 235; /* Royal Blue (Trustworthy Tech Color) */
-  --color-card: 255, 255, 255;
-  --color-card-muted: 245, 245, 245;
-  --color-border: 230, 230, 230;
+  --ink:       #0b0b0e;
+  --ink2:      #13131a;
+  --line:      #1e1e28;
+  --dim:       #44445a;
+  --smoke:     #8888a0;
+  --off:       #ccccd8;
+  --white:     #f0f0f6;
+  --blue:      #4f6ef7;
+  --blue-dim:  rgba(79, 110, 247, 0.12);
+  --serif:     'Cormorant Garamond', Georgia, serif;
+  --sans:      'Outfit', sans-serif;
 }
 
-[data-theme="dark"] {
-  /* Dark Mode (Cyber/AI Vibe) */
-  --color-fill: 15, 23, 42; /* Slate 900 (Deep Blue/Black) */
-  --color-text-base: 226, 232, 240; /* Slate 200 */
-  --color-accent: 56, 189, 248; /* Sky Blue (Glowing Effect) */
-  --color-card: 30, 41, 59; /* Slate 800 */
-  --color-card-muted: 15, 23, 42;
-  --color-border: 51, 65, 85;
+/* ─── Reset ──────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@theme inline {
-  --font-app: var(--font-google-sans-code);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
-  --color-muted: var(--muted);
-  --color-border: var(--border);
+html {
+  scroll-behavior: smooth;
 }
 
-@layer base {
-  * {
-    @apply border-border outline-accent/75;
-    scrollbar-width: auto;
-    scrollbar-color: var(--color-muted) transparent;
+body {
+  background: var(--ink);
+  color: var(--off);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ─── Custom cursor ──────────────────────────────────── */
+.cursor {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s, height 0.25s, opacity 0.25s;
+}
+
+/* ─── Nav ────────────────────────────────────────────── */
+.site-nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 5vw;
+}
+
+.site-nav::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(11, 11, 14, 0.97) 0%, transparent 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.nav-logo b {
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.nav-links a {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  transition: color 0.2s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 100%;
+  height: 1px;
+  background: var(--blue);
+  transition: right 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--white);
+}
+
+.nav-links a:hover::after {
+  right: 0;
+}
+
+.nav-links .nav-cta {
+  color: var(--white);
+  padding: 0.55rem 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.nav-links .nav-cta::after {
+  display: none;
+}
+
+.nav-links .nav-cta:hover {
+  border-color: var(--blue);
+  background: var(--blue-dim);
+}
+
+/* ─── Shared buttons ─────────────────────────────────── */
+.btn-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 2rem;
+  background: var(--blue);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-main:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.btn-main svg {
+  transition: transform 0.2s;
+}
+
+.btn-main:hover svg {
+  transform: translateX(3px);
+}
+
+.btn-line {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+
+.btn-line:hover {
+  color: var(--white);
+}
+
+/* ─── Section shell ──────────────────────────────────── */
+.section {
+  padding: 9rem 5vw;
+}
+
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+}
+
+/* ─── Footer ─────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 2.5rem 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--off);
+}
+
+.footer-nav {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.footer-nav a {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dim);
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+  color: var(--white);
+}
+
+.footer-copy {
+  font-size: 0.68rem;
+  color: var(--dim);
+  letter-spacing: 0.06em;
+}
+
+/* ─── Scroll reveal ──────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .nav-links a:not(.nav-cta) {
+    display: none;
   }
-  html {
-    @apply overflow-y-scroll scroll-smooth;
-  }
-  body {
-    @apply flex min-h-svh flex-col bg-background font-app text-foreground selection:bg-accent/75 selection:text-background;
-  }
-  a,
-  button {
-    @apply outline-offset-1 outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
-  }
-  button:not(:disabled),
-  [role="button"]:not(:disabled) {
-    cursor: pointer;
-  }
-}
 
-@utility max-w-app {
-  @apply max-w-3xl;
-}
-
-@utility app-layout {
-  @apply mx-auto w-full max-w-app px-4;
-}
-
-.active-nav {
-  @apply underline decoration-wavy decoration-2 underline-offset-8;
-}
-
-/* Source: https://piccalil.li/blog/a-more-modern-css-reset/ */
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-  scroll-margin-block: 1rem;
+  .section {
+    padding: 5rem 5vw;
+  }
 }

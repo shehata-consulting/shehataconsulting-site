@@ -1,164 +1,567 @@
 ---
+// src/pages/index.astro
+// Homepage — hero, services, approach, about summary, and contact CTA.
+
 import Layout from "@/layouts/Layout.astro";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
-import Socials from "@/components/Socials.astro";
-import LinkButton from "@/components/LinkButton.astro";
-import IconRss from "@/assets/icons/IconRss.svg";
-import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
-import { SITE } from "@/config";
-import { SOCIALS } from "@/constants";
 ---
 
-<Layout>
-  <Header />
-  <main id="main-content" data-layout="index" class="app-layout">
-    <section id="hero" class:list={["pt-8 pb-6", "border-b border-border"]}>
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Shehata Tech Solutions
+<Layout
+  title="Shehata Tech Solutions — Enterprise AI Implementation & Automation"
+  description="I help businesses navigate the noise of modern AI to build tools that actually work. Hybrid RAG systems, LLM integrations, and process automation."
+>
+
+  <!-- ─── Hero ───────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-body">
+      <p class="hero-kicker">AI Solutions &amp; Automation Consulting</p>
+      <h1 class="hero-headline">
+        AI that actually<br />
+        <em>works</em> for your<br />
+        business.
       </h1>
-      <a
-        target="_blank"
-        href="/rss.xml"
-        class="inline-block"
-        aria-label="rss feed"
-        title="RSS Feed"
-      >
-        <IconRss
-          width={20}
-          height={20}
-          class="scale-125 stroke-accent stroke-3 rtl:-rotate-90"
-        />
-        <span class="sr-only">RSS Feed</span>
-      </a>
-
-      <p class="my-4">
-        Enterprise-Grade AI Implementation & Automation. We move you beyond "chatbots" to intelligent workflows that drive revenue.
-      </p>
-      <p class="mt-2">
-        Read the blog posts or check
-        <LinkButton
-          class="underline decoration-dashed underline-offset-4 hover:text-accent"
-          href="https://github.com/satnaing/astro-paper#readme"
-        >
-          README
-        </LinkButton> for more info.
-      </p>
-      {
-        // only display if at least one social link is enabled
-        SOCIALS.length > 0 && (
-          <div class="mt-4 flex max-sm:flex-col sm:items-center">
-            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">Social Links:</div>
-            <Socials />
-          </div>
-        )
-      }
-    </section>
-
-<section id="services" class="pb-6 pt-12">
-        <h2 class="text-2xl font-bold tracking-wide sm:text-3xl">
-          Services
-        </h2>
-        <div class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          
-          <div class="rounded-lg border border-skin-line p-6 shadow-sm">
-            <h3 class="text-lg font-semibold text-skin-accent">RAG & Knowledge Retrieval</h3>
-            <p class="mt-2 text-sm text-skin-base">
-              Stop wasting hours searching for answers. We build secure pipelines (Pinecone, Gemini) that let your team "chat" with internal data instantly.
-            </p>
-          </div>
-
-          <div class="rounded-lg border border-skin-line p-6 shadow-sm">
-            <h3 class="text-lg font-semibold text-skin-accent">Intelligent Automation</h3>
-            <p class="mt-2 text-sm text-skin-base">
-              Autonomous agents that read, categorize, and act on data streams. We automate the boring stuff so you can focus on strategy.
-            </p>
-          </div>
-
-          <div class="rounded-lg border border-skin-line p-6 shadow-sm">
-            <h3 class="text-lg font-semibold text-skin-accent">AI Strategy Audits</h3>
-            <p class="mt-2 text-sm text-skin-base">
-              A 2-week deep dive into your infrastructure to identify high-ROI AI opportunities and flag security risks before you build.
-            </p>
-          </div>
-
-        </div>
-      </section>
-      <hr class="border-skin-line" />
-
-<section id="contact" class="pb-6 pt-12">
-      <div class="mx-auto max-w-3xl text-center">
-        <h2 class="text-2xl font-bold tracking-wide sm:text-3xl">
-          Start the Conversation
-        </h2>
-        <p class="mt-4 text-lg text-skin-base">
-          Have a project in mind? Let's discuss how we can build it.
+      <div class="hero-row">
+        <p class="hero-sub">
+          Enterprise-grade AI implementation and automation — built around
+          your operations, not around the hype.
         </p>
+        <div class="hero-cta">
+          <a href="#services" class="btn-main">
+            What I Build
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn-line">Start a conversation →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Services ────────────────────────────────────── -->
+  <section class="section" id="services">
+    <div class="section-inner">
+      <p class="section-label reveal">What I Build</p>
+      <div class="services-layout">
+
+        <div class="services-left reveal reveal-d1">
+          <h2>AI implementations that solve real problems.</h2>
+          <p>
+            I prefer proven, stable solutions over experimental trends. If a
+            simple automation script solves the problem better than a complex
+            AI model, I will tell you.
+          </p>
+        </div>
+
+        <div class="services-list reveal reveal-d2">
+          <div class="svc">
+            <span class="svc-num">01</span>
+            <div>
+              <div class="svc-title">Hybrid RAG Systems</div>
+              <div class="svc-desc">
+                Retrieval-Augmented Generation architectures that give your
+                teams instant, accurate access to internal knowledge —
+                securely, without sending your data to third parties.
+              </div>
+            </div>
+            <span class="svc-arrow" aria-hidden="true">↗</span>
+          </div>
+
+          <div class="svc">
+            <span class="svc-num">02</span>
+            <div>
+              <div class="svc-title">Advanced LLM Implementations</div>
+              <div class="svc-desc">
+                Custom large language model integrations tailored to your
+                industry's specific workflows, data structures, and compliance
+                requirements.
+              </div>
+            </div>
+            <span class="svc-arrow" aria-hidden="true">↗</span>
+          </div>
+
+          <div class="svc">
+            <span class="svc-num">03</span>
+            <div>
+              <div class="svc-title">Process Automation</div>
+              <div class="svc-desc">
+                Connecting disconnected systems to eliminate manual data entry
+                and reduce operational friction — Python-first, built to last.
+              </div>
+            </div>
+            <span class="svc-arrow" aria-hidden="true">↗</span>
+          </div>
+
+          <div class="svc">
+            <span class="svc-num">04</span>
+            <div>
+              <div class="svc-title">AI Feasibility &amp; Strategy</div>
+              <div class="svc-desc">
+                Not sure if AI is the right tool? I help you cut through the
+                noise and identify where automation genuinely moves the needle
+                for your business.
+              </div>
+            </div>
+            <span class="svc-arrow" aria-hidden="true">↗</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Approach ─────────────────────────────────────── -->
+  <section class="section approach-bg" id="approach">
+    <div class="section-inner">
+      <p class="section-label reveal">My Approach</p>
+      <div class="approach-steps reveal reveal-d1">
+
+        <div class="pstep">
+          <div class="pstep-n">01</div>
+          <h3>Understand First</h3>
+          <p>
+            I start by learning your operational bottlenecks — not by pitching
+            a solution. Technology should serve your goals, not the other way
+            around.
+          </p>
+        </div>
+
+        <div class="pstep">
+          <div class="pstep-n">02</div>
+          <h3>Build Practically</h3>
+          <p>
+            Proven and stable over experimental. If a simpler solution fits
+            better, I'll say so. Every line of code is written to be maintained
+            and scaled.
+          </p>
+        </div>
+
+        <div class="pstep">
+          <div class="pstep-n">03</div>
+          <h3>Secure by Default</h3>
+          <p>
+            Your data is your competitive advantage. Every system I build
+            prioritizes privacy and keeps your internal knowledge secure.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Contact CTA ──────────────────────────────────── -->
+  <section class="cta-section" id="contact">
+    <div class="cta-inner">
+      <div class="cta-top reveal">
+        <h2 class="cta-heading">
+          Ready to build<br />
+          <em>something real?</em>
+        </h2>
+        <div class="cta-right">
+          <p>
+            Whether you're ready to build or just have questions about
+            feasibility, I'm always happy to share what I know. No pitch —
+            just an honest conversation about your problem.
+          </p>
+          <a href="mailto:shehatam.dev@gmail.com" class="btn-main">
+            Get in Touch
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
       </div>
 
-      <form 
-        action="https://api.web3forms.com/submit" 
-        method="POST" 
-        class="mx-auto mt-10 max-w-xl rounded-lg border border-skin-line p-8 shadow-sm bg-skin-card"
-      >
-        <input type="hidden" name="access_key" value="12ef53cd-37d3-4a2f-8c60-96542dfc1635">
-
-        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-        <div class="grid grid-cols-1 gap-6">
-          <label class="block">
-            <span class="text-skin-base font-medium">Full Name</span>
-            <input 
-              type="text" 
-              name="name" 
-              class="mt-1 block w-full rounded-md border-skin-line bg-skin-fill px-4 py-2 text-skin-base focus:border-skin-accent focus:ring-skin-accent" 
-              placeholder="Jane Doe" 
-              required
-            />
-          </label>
-
-          <label class="block">
-            <span class="text-skin-base font-medium">Email Address</span>
-            <input 
-              type="email" 
-              name="email" 
-              class="mt-1 block w-full rounded-md border-skin-line bg-skin-fill px-4 py-2 text-skin-base focus:border-skin-accent focus:ring-skin-accent" 
-              placeholder="jane@company.com" 
-              required
-            />
-          </label>
-
-          <label class="block">
-            <span class="text-skin-base font-medium">Message</span>
-            <textarea 
-              name="message" 
-              rows="4" 
-              class="mt-1 block w-full rounded-md border-skin-line bg-skin-fill px-4 py-2 text-skin-base focus:border-skin-accent focus:ring-skin-accent" 
-              placeholder="Tell me about your project..." 
-              required
-            ></textarea>
-          </label>
-
-          <button 
-            type="submit" 
-            class="mt-4 w-full rounded-lg bg-skin-accent px-6 py-3 font-bold text-skin-inverted transition hover:opacity-90"
-          >
-            Send Message
-          </button>
+      <div class="cta-bottom reveal reveal-d1">
+        <a href="shehatam.dev@gmail.com" class="cta-email">
+          shehatam.dev@gmail.com
+        </a>
+        <div class="cta-tags">
+          <span class="cta-tag">Hybrid RAG</span>
+          <span class="cta-tag">LLM Integration</span>
+          <span class="cta-tag">Process Automation</span>
+          <span class="cta-tag">Python Development</span>
+          <span class="cta-tag">AI Strategy</span>
         </div>
-      </form>
-    </section>
-      <hr class="border-skin-line" />
-  </main>
-  <Footer />
+      </div>
+    </div>
+  </section>
+
 </Layout>
 
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const indexLayout = (document.querySelector("#main-content") as HTMLElement)
-      ?.dataset?.layout;
-    if (indexLayout) {
-      sessionStorage.setItem("backUrl", "/");
-    }
-  });
-</script>
+<style>
+/* ─── Hero ───────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: 0 5vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.25;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 80%);
+}
+
+.hero-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 5rem;
+  padding-top: 12rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: up 0.7s 0.1s ease forwards;
+}
+
+.hero-kicker::before {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: currentColor;
+}
+
+.hero-headline {
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 8vw, 8rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  opacity: 0;
+  animation: up 0.8s 0.2s ease forwards;
+}
+
+.hero-headline em {
+  font-style: italic;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(240, 240, 246, 0.35);
+}
+
+.hero-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3rem;
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: up 0.7s 0.4s ease forwards;
+}
+
+.hero-sub {
+  max-width: 420px;
+  font-size: 1rem;
+  color: var(--smoke);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+@keyframes up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Services ───────────────────────────────────────── */
+.services-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 8vw;
+  align-items: start;
+}
+
+.services-left h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.services-left p {
+  color: var(--smoke);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.svc {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: 0 2rem;
+  padding: 2.25rem 0;
+  border-bottom: 1px solid var(--line);
+  cursor: default;
+  position: relative;
+}
+
+.svc:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.svc::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--blue);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.35s ease;
+}
+
+.svc:hover::before {
+  transform: scaleY(1);
+}
+
+.svc-num {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--dim);
+  padding-top: 0.25rem;
+  min-width: 2rem;
+}
+
+.svc-title {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 300;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.svc-desc {
+  color: var(--smoke);
+  font-size: 0.88rem;
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+.svc-arrow {
+  color: var(--dim);
+  font-size: 1.1rem;
+  padding-top: 0.3rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.svc:hover .svc-arrow {
+  color: var(--blue);
+  transform: translate(3px, -3px);
+}
+
+/* ─── Approach ───────────────────────────────────────── */
+.approach-bg {
+  background: var(--ink2);
+}
+
+.approach-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pstep {
+  padding: 2.5rem 2rem;
+  border-right: 1px solid var(--line);
+  transition: background 0.25s;
+}
+
+.pstep:last-child {
+  border-right: none;
+}
+
+.pstep:hover {
+  background: rgba(79, 110, 247, 0.05);
+}
+
+.pstep-n {
+  font-family: var(--serif);
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--line);
+  line-height: 1;
+  margin-bottom: 1.25rem;
+}
+
+.pstep h3 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.pstep p {
+  font-size: 0.82rem;
+  color: var(--smoke);
+  line-height: 1.7;
+}
+
+/* ─── CTA ────────────────────────────────────────────── */
+.cta-section {
+  padding: 9rem 5vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(79, 110, 247, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.cta-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 3.5rem;
+}
+
+.cta-heading {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 5.5rem);
+  font-weight: 300;
+  line-height: 0.95;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.cta-heading em {
+  font-style: italic;
+  color: var(--blue);
+}
+
+.cta-right {
+  max-width: 340px;
+}
+
+.cta-right p {
+  color: var(--smoke);
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 1.75rem;
+}
+
+.cta-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.cta-email {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-weight: 300;
+  color: var(--smoke);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: color 0.2s;
+}
+
+.cta-email:hover {
+  color: var(--white);
+}
+
+.cta-email::before {
+  content: '↗';
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--blue);
+}
+
+.cta-tags {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.cta-tag {
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.cta-tag:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-body { padding-top: 9rem; }
+  .services-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .approach-steps { grid-template-columns: 1fr; }
+  .pstep { border-right: none; border-bottom: 1px solid var(--line); }
+  .pstep:last-child { border-bottom: none; }
+  .cta-top { flex-direction: column; }
+  .cta-right { max-width: none; }
+}
+</style>

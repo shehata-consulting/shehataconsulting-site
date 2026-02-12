@@ -1,0 +1,422 @@
+---
+// src/pages/about.astro
+// About page — uses the same design language as the homepage.
+
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+  title="About — Shehata Tech Solutions"
+  description="Michael Shehata is an AI Solutions Consultant and founder of Shehata Tech Solutions LLC, helping businesses build reliable AI infrastructure."
+>
+
+  <!-- ─── About Hero ──────────────────────────────────── -->
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <p class="section-label">About</p>
+      <h1 class="about-headline">
+        Building reliable<br />
+        <em>AI infrastructure.</em>
+      </h1>
+    </div>
+  </section>
+
+  <!-- ─── Bio + Pillars ──────────────────────────────── -->
+  <section class="section">
+    <div class="section-inner">
+      <div class="about-layout">
+
+        <div class="reveal reveal-d1">
+          <p class="about-intro">
+            I am <strong>Michael Shehata</strong>, an AI Solutions Consultant and
+            the founder of <strong>Shehata Tech Solutions LLC</strong>.
+          </p>
+          <p>
+            My goal is simple: I help businesses navigate the noise of modern
+            AI to build tools that actually work. I believe that technology
+            should serve your business goals, not the other way around.
+          </p>
+          <p>
+            I approach every project as a partnership. I don't just write
+            code — I try to understand the operational bottlenecks slowing you
+            down. I value clear communication as much as clean code.
+          </p>
+
+          <div class="about-connect">
+            <p class="section-label" style="margin-bottom:1.5rem;">Connect</p>
+            <div class="connect-links">
+              <a href="mailto:shehatam.dev@gmail.com" class="connect-item">
+                <span class="connect-icon" aria-hidden="true">✉</span>
+                shehatam.dev@gmail.com
+              </a>
+              <a
+                href="https://github.com/shehata-consulting"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="connect-item"
+              >
+                <span class="connect-icon" aria-hidden="true">⌥</span>
+                github.com/shehata-consulting
+              </a>
+              <a
+                href="https://linkedin.com/in/YOUR_LINKEDIN_HERE"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="connect-item"
+              >
+                <span class="connect-icon" aria-hidden="true">↗</span>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-d2">
+          <p class="section-label" style="margin-bottom:2rem;">My Philosophy</p>
+          <div class="pillars">
+            <div class="pillar">
+              <span class="pillar-mark">—</span>
+              <div>
+                <h3>Practical over Hype</h3>
+                <p>
+                  I prefer proven, stable solutions over experimental trends.
+                  If a simple automation script solves the problem better than
+                  a complex AI model, I will tell you.
+                </p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-mark">—</span>
+              <div>
+                <h3>Security Focused</h3>
+                <p>
+                  Your data is your competitive advantage. I build systems
+                  that prioritize privacy and keep your internal knowledge
+                  secure.
+                </p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-mark">—</span>
+              <div>
+                <h3>Long-Term Thinking</h3>
+                <p>
+                  I build software designed to be maintained and scaled —
+                  not just to look good in a demo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Current Focus ────────────────────────────────── -->
+  <section class="section focus-bg">
+    <div class="section-inner">
+      <p class="section-label reveal">Current Focus</p>
+      <div class="focus-layout reveal reveal-d1">
+        <div class="focus-intro">
+          <h2>Active client work.</h2>
+          <p>
+            I am currently working with a key client to architect a custom AI
+            implementation — hands-on, from design through deployment.
+          </p>
+        </div>
+        <div class="focus-items">
+          <div class="focus-item">
+            <div class="focus-num">01</div>
+            <div>
+              <h4>Retrieval-Augmented Generation (RAG)</h4>
+              <p>Helping teams access their internal knowledge instantly and accurately.</p>
+            </div>
+          </div>
+          <div class="focus-item">
+            <div class="focus-num">02</div>
+            <div>
+              <h4>Process Automation</h4>
+              <p>Connecting disconnected systems to reduce manual data entry.</p>
+            </div>
+          </div>
+          <div class="focus-item">
+            <div class="focus-num">03</div>
+            <div>
+              <h4>Custom Development</h4>
+              <p>Tailoring Python and LLM solutions to specific industry needs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA strip ────────────────────────────────────── -->
+  <section class="section about-cta">
+    <div class="section-inner">
+      <div class="about-cta-inner reveal">
+        <p>
+          If you are looking for a developer who values clear communication as
+          much as clean code, I would love to hear from you. Whether you are
+          ready to build or just have questions about feasibility, I am always
+          happy to share what I know.
+        </p>
+        <a href="mailto:shehatam.dev@gmail.com" class="btn-main">
+          Get in Touch
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+/* ─── About hero ─────────────────────────────────────── */
+.about-hero {
+  min-height: 55vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 5vw 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.2;
+  mask-image: radial-gradient(ellipse 80% 80% at 30% 60%, black 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 30% 60%, black 20%, transparent 75%);
+}
+
+.about-hero-inner {
+  max-width: 1200px;
+  width: 100%;
+  padding-top: 10rem;
+}
+
+.about-headline {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  margin-top: 1.5rem;
+}
+
+.about-headline em {
+  font-style: italic;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(240, 240, 246, 0.35);
+}
+
+/* ─── Bio layout ─────────────────────────────────────── */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vw;
+  align-items: start;
+}
+
+.about-intro {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.about-layout p {
+  color: var(--smoke);
+  font-size: 0.95rem;
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
+}
+
+/* ─── Connect links ──────────────────────────────────── */
+.about-connect {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.connect-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.connect-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.88rem;
+  color: var(--smoke);
+  transition: color 0.2s;
+}
+
+.connect-item:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.connect-item:hover {
+  color: var(--white);
+}
+
+.connect-icon {
+  color: var(--blue);
+  font-size: 0.8rem;
+  min-width: 1.25rem;
+}
+
+/* ─── Philosophy pillars ─────────────────────────────── */
+.pillars {
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--line);
+  align-items: flex-start;
+}
+
+.pillar:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.pillar-mark {
+  font-family: var(--serif);
+  font-size: 0.8rem;
+  color: var(--blue);
+  padding-top: 0.15rem;
+  min-width: 1.5rem;
+}
+
+.pillar h3 {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.02em;
+}
+
+.pillar p {
+  font-size: 0.85rem;
+  color: var(--smoke);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ─── Current focus ──────────────────────────────────── */
+.focus-bg {
+  background: var(--ink2);
+}
+
+.focus-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 8vw;
+  align-items: start;
+}
+
+.focus-intro h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.focus-intro p {
+  color: var(--smoke);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.focus-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.focus-item {
+  display: flex;
+  gap: 2rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--line);
+  align-items: flex-start;
+}
+
+.focus-item:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.focus-num {
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--dim);
+  padding-top: 0.2rem;
+  min-width: 2rem;
+}
+
+.focus-item h4 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 0.35rem;
+}
+
+.focus-item p {
+  font-size: 0.85rem;
+  color: var(--smoke);
+  line-height: 1.65;
+}
+
+/* ─── About CTA strip ────────────────────────────────── */
+.about-cta {
+  border-top: 1px solid var(--line);
+}
+
+.about-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.about-cta-inner p {
+  max-width: 580px;
+  color: var(--smoke);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .about-hero { min-height: 45vh; padding-bottom: 3rem; }
+  .about-hero-inner { padding-top: 8rem; }
+  .about-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .focus-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-cta-inner { flex-direction: column; align-items: flex-start; }
+}
+</style>
