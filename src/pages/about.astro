@@ -7,7 +7,7 @@ import Layout from "@/layouts/Layout.astro";
 
 <Layout
   title="About — Shehata Tech Solutions"
-  description="Michael Shehata is an AI Solutions Consultant and founder of Shehata Tech Solutions LLC, helping businesses build reliable AI infrastructure."
+  description="Michael Shehata is an AI Solutions Architecht and founder of Shehata Tech Solutions LLC, helping businesses build reliable AI infrastructure."
 >
 
   <!-- ─── About Hero ──────────────────────────────────── -->
@@ -28,7 +28,7 @@ import Layout from "@/layouts/Layout.astro";
 
         <div class="reveal reveal-d1">
           <p class="about-intro">
-            I am <strong>Michael Shehata</strong>, an AI Solutions Consultant and
+            I am <strong>Michael Shehata</strong>, an AI Solutions Architecht and
             the founder of <strong>Shehata Tech Solutions LLC</strong>.
           </p>
           <p>
@@ -412,11 +412,70 @@ import Layout from "@/layouts/Layout.astro";
 }
 
 /* ─── Responsive ─────────────────────────────────────── */
+
+/* Tablet + mobile (≤ 900px) */
 @media (max-width: 900px) {
-  .about-hero { min-height: 45vh; padding-bottom: 3rem; }
-  .about-hero-inner { padding-top: 8rem; }
-  .about-layout { grid-template-columns: 1fr; gap: 3rem; }
-  .focus-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-  .about-cta-inner { flex-direction: column; align-items: flex-start; }
+  /* Hero */
+  .about-hero {
+    min-height: 40vh;
+    padding-bottom: 3rem;
+  }
+
+  .about-hero-inner {
+    padding-top: 7rem;
+  }
+
+  /* Stack two-column layouts */
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .focus-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* CTA strip */
+  .about-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .about-cta-inner p {
+    max-width: 100%;
+  }
+}
+
+/* Mobile only (≤ 640px) */
+@media (max-width: 640px) {
+  /* About hero headline */
+  .about-headline {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    line-height: 1;
+  }
+
+  /* Bio intro text */
+  .about-intro {
+    font-size: 1.05rem;
+  }
+
+  /* Connect links: tighter */
+  .connect-item {
+    font-size: 0.82rem;
+    padding: 0.85rem 0;
+  }
+
+  /* Focus items: tighten gap */
+  .focus-item {
+    gap: 1.25rem;
+    padding: 1.5rem 0;
+  }
+
+  /* Pillar rows: tighten */
+  .pillar {
+    padding: 1.5rem 0;
+  }
 }
 </style>

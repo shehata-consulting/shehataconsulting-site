@@ -555,13 +555,129 @@ import Layout from "@/layouts/Layout.astro";
 }
 
 /* ─── Responsive ─────────────────────────────────────── */
+
+/* Tablet + mobile (≤ 900px) */
 @media (max-width: 900px) {
-  .hero-body { padding-top: 9rem; }
-  .services-layout { grid-template-columns: 1fr; gap: 3rem; }
-  .approach-steps { grid-template-columns: 1fr; }
-  .pstep { border-right: none; border-bottom: 1px solid var(--line); }
-  .pstep:last-child { border-bottom: none; }
-  .cta-top { flex-direction: column; }
-  .cta-right { max-width: none; }
+  /* Hero */
+  .hero-body {
+    padding-top: 8rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+  }
+
+  .hero-sub {
+    max-width: 100%;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  /* Services: stack columns */
+  .services-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* Service rows: tighten gap between number and text */
+  .svc {
+    gap: 0 1.25rem;
+    padding: 1.75rem 0;
+  }
+
+  /* Approach: stack to single column */
+  .approach-steps {
+    grid-template-columns: 1fr;
+    border-radius: 4px;
+  }
+
+  .pstep {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .pstep:last-child {
+    border-bottom: none;
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: 5rem 5vw;
+  }
+
+  .cta-top {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-right {
+    max-width: 100%;
+  }
+
+  .cta-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .cta-tags {
+    gap: 0.5rem;
+  }
+}
+
+/* Mobile only (≤ 640px) */
+@media (max-width: 640px) {
+  /* Hero headline: prevent overflow */
+  .hero-headline {
+    font-size: clamp(2.8rem, 11vw, 5rem);
+    line-height: 1;
+  }
+
+  .hero-kicker {
+    font-size: 0.62rem;
+    margin-bottom: 1.75rem;
+  }
+
+  /* Hero grid background: subtler on small screens */
+  .hero::before {
+    background-size: 50px 50px;
+    opacity: 0.15;
+  }
+
+  /* Service numbers: hide on very small screens to save space */
+  .svc-num {
+    display: none;
+  }
+
+  .svc {
+    grid-template-columns: 1fr auto;
+  }
+
+  .svc-title {
+    font-size: 1.2rem;
+  }
+
+  /* Approach step numbers: smaller */
+  .pstep-n {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* CTA heading */
+  .cta-heading {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
 }
 </style>

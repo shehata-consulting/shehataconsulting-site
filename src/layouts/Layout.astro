@@ -66,13 +66,28 @@ const ogImageURL   = new URL(ogImage, SITE.website);
     <!-- ─── Navigation ─────────────────────────────── -->
     <nav class="site-nav" aria-label="Main navigation">
       <a href="/" class="nav-logo"><b>Shehata</b> Tech Solutions</a>
+
+      <!-- Desktop links -->
       <div class="nav-links">
         <a href="/#services">Services</a>
         <a href="/#approach">Approach</a>
         <a href="/about">About</a>
         <a href="/#contact" class="nav-cta">Contact</a>
       </div>
+
+      <!-- Mobile hamburger button -->
+      <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
+
+    <!-- Mobile drawer -->
+    <div class="nav-drawer" id="nav-drawer" aria-hidden="true">
+      <a href="/#services" class="drawer-link">Services</a>
+      <a href="/#approach" class="drawer-link">Approach</a>
+      <a href="/about"     class="drawer-link">About</a>
+      <a href="/#contact"  class="drawer-link drawer-cta">Contact</a>
+    </div>
 
     <!-- ─── Page content ───────────────────────────── -->
     <main>
@@ -86,7 +101,7 @@ const ogImageURL   = new URL(ogImage, SITE.website);
         <a href="/#services">Services</a>
         <a href="/#approach">Approach</a>
         <a href="/about">About</a>
-        <a href="mailto:shehatam.dev@gmail.com">Contact</a>
+        <a href="mailto:contact@shehatatech.com">Contact</a>
       </nav>
       <span class="footer-copy">
         © {new Date().getFullYear()} Shehata Tech Solutions LLC
@@ -122,6 +137,42 @@ const ogImageURL   = new URL(ogImage, SITE.website);
           cursor.style.height  = "6px";
           cursor.style.opacity = "1";
         });
+      });
+
+      // Hamburger menu toggle
+      const burger = document.getElementById("nav-burger");
+      const drawer = document.getElementById("nav-drawer");
+
+      function openMenu() {
+        burger?.classList.add("open");
+        drawer?.classList.add("open");
+        drawer?.setAttribute("aria-hidden", "false");
+        burger?.setAttribute("aria-expanded", "true");
+        burger?.setAttribute("aria-label", "Close menu");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMenu() {
+        burger?.classList.remove("open");
+        drawer?.classList.remove("open");
+        drawer?.setAttribute("aria-hidden", "true");
+        burger?.setAttribute("aria-expanded", "false");
+        burger?.setAttribute("aria-label", "Open menu");
+        document.body.style.overflow = "";
+      }
+
+      burger?.addEventListener("click", () => {
+        burger.classList.contains("open") ? closeMenu() : openMenu();
+      });
+
+      // Close drawer when a link is clicked
+      drawer?.querySelectorAll(".drawer-link").forEach(link => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      // Close on Escape key
+      document.addEventListener("keydown", e => {
+        if (e.key === "Escape") closeMenu();
       });
 
       // Scroll reveal
